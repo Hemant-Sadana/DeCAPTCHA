@@ -6,7 +6,7 @@ width = []
 # Reading the input image 
 acc = 0
 count = 0
-path = "C:/Users/hemant sadana/Desktop/Mtech first sem/Machine Learning/Assignments/Assignment 3/assn3/assn3/train/*.*"
+path = "train/*.*"
 
 for file in glob.glob(path):
     if(file[-8] == '\\'):
@@ -43,11 +43,6 @@ for file in glob.glob(path):
         cv2.waitKey(0)
         print('Width',w)
         print('Height',h)
-#        if(abs(w-h)>70 or w>120 or h<60):
-#            continue;
-        
-#        cv2.imshow('abc',roi)
-#        cv2.waitKey(0)
         detchar = detchar + 1
     if detchar == numchar:
         acc = acc+1
