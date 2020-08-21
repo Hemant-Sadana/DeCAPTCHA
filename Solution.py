@@ -6,7 +6,7 @@ import numpy as np
 count = 1
 numTest = 5
 name = 0
-path = "C:/Users/hemant sadana/Desktop/Mtech first sem/Machine Learning/Assignments/Assignment 3/assn3/assn3/train/*.*"
+path = "train/*.*"
 test = 0
 for file in glob.glob(path):
     if(test<2):
@@ -16,13 +16,9 @@ for file in glob.glob(path):
     if(test == 4):
         break
     img = cv2.imread(file, 1)
-#    cv2.imshow('Original Image',img)
-#    cv2.waitKey(0)
-    cv2.imwrite("C:/Users/hemant sadana/Desktop/Mtech first sem/Machine Learning/Assignments/Assignment 3/assn3/assn3/Step_image/"+ str(name) +".png", img)
+    cv2.imwrite("Step_image/"+ str(name) +".png", img)
     name = name + 1
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-#    cv2.imshow('HSV Image',hsv)
-#    cv2.waitKey(0)
     cv2.imwrite("C:/Users/hemant sadana/Desktop/Mtech first sem/Machine Learning/Assignments/Assignment 3/assn3/assn3/Step_image/"+ str(name) +".png", hsv)
     name = name + 1
     x = np.array(hsv[0][0],np.uint8)
